@@ -1,0 +1,14 @@
+"use client";
+
+import dynamic from 'next/dynamic';
+import { ReactNode } from 'react';
+
+// This component helps prevent hydration mismatches by ensuring
+// certain content only renders on the client side
+const NoSSR = ({ children }: { children: ReactNode }) => {
+  return <>{children}</>;
+};
+
+export default dynamic(() => Promise.resolve(NoSSR), {
+  ssr: false,
+});

@@ -3,15 +3,9 @@
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { ArrowDown, Download, Github, ExternalLink } from "lucide-react";
-import { useEffect, useState } from "react";
+import { HydrationSafe, NoSSR } from "./HydrationSafe";
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const scrollToNext = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -21,14 +15,14 @@ export function Hero() {
 
   // Animation variants for smooth, professional animations
   const fadeInUp = {
-    initial: { 
-      opacity: 0, 
-      y: 60 
+    initial: {
+      opacity: 0,
+      y: 60,
     },
-    animate: { 
-      opacity: 1, 
-      y: 0
-    }
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
   };
 
   const stagger = {
@@ -36,67 +30,78 @@ export function Hero() {
       transition: {
         staggerChildren: 0.15,
         delayChildren: 0.3,
-      }
-    }
+      },
+    },
   };
 
   const slideInFromLeft = {
-    initial: { 
-      opacity: 0, 
-      x: -50 
+    initial: {
+      opacity: 0,
+      x: -50,
     },
-    animate: { 
-      opacity: 1, 
-      x: 0
-    }
+    animate: {
+      opacity: 1,
+      x: 0,
+    },
   };
-
-  if (!mounted) {
-    return <div className="min-h-screen" />; // Prevent hydration mismatch
-  }
 
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden hero-gradient"
+      suppressHydrationWarning
     >
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-          className="absolute top-20 left-10 w-32 h-32 bg-blue-300/30 rounded-full blur-2xl"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="absolute top-40 right-20 w-48 h-48 bg-blue-200/40 rounded-full blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 1 }}
-          className="absolute bottom-20 left-1/4 w-24 h-24 bg-blue-400/30 rounded-full blur-xl"
-        />
-      </div>
+      <HydrationSafe>
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            className="absolute top-20 left-10 w-32 h-32 bg-blue-300/30 rounded-full blur-2xl"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 2, delay: 0.5 }}
+            className="absolute top-40 right-20 w-48 h-48 bg-blue-200/40 rounded-full blur-3xl"
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, delay: 1 }}
+            className="absolute bottom-20 left-1/4 w-24 h-24 bg-blue-400/30 rounded-full blur-xl"
+          />
+        </div>
+      </HydrationSafe>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <motion.div 
-            variants={stagger}
-            initial="initial"
-            animate="animate"
-            className="space-y-8"
-          >
+          <HydrationSafe fallback={
+            <div className="space-y-8">
+              <div>
+                <p className="text-primary mb-4 font-medium">Hi, I&apos;m</p>
+                <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-gradient">Hasindu Bandara</h1>
+                <h2 className="text-2xl lg:text-3xl text-muted-foreground mb-6 font-medium">Full-Stack Software Engineer</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+                  I craft exceptional digital experiences with modern technologies. Passionate about clean code, innovative solutions, and building products that make a difference.
+                </p>
+              </div>
+            </div>
+          }>
+            <motion.div
+              variants={stagger}
+              initial="initial"
+              animate="animate"
+              className="space-y-8"
+            >
             <motion.div variants={fadeInUp}>
               <motion.p
                 variants={slideInFromLeft}
                 className="text-primary mb-4 font-medium"
               >
-                Hi, I'm
+                Hi, I&apos;m
               </motion.p>
               <motion.h1
                 variants={fadeInUp}
@@ -140,18 +145,35 @@ export function Hero() {
               </Button>
             </motion.div>
           </motion.div>
+          </HydrationSafe>
 
           {/* Visual Element */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 50 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-            }}
-            transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
-            className="relative"
-          >
+          <HydrationSafe fallback={
+            <div className="relative w-full max-w-md mx-auto">
+              <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-6">
+                <img
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfGNvZGluZyUyMHNldHVwfGVufDF8fHx8MTc1NjU1ODgyM3ww&ixlib=rb-4.1.0&q=80&w=400"
+                  alt="Coding setup"
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <div className="space-y-3">
+                  <div className="h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{width: "75%"}} />
+                  <div className="h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full" style={{width: "50%"}} />
+                  <div className="h-3 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full" style={{width: "65%"}} />
+                </div>
+              </div>
+            </div>
+          }>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+              }}
+              transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
+              className="relative"
+            >
             <motion.div
               animate={{
                 y: [0, -10, 0],
@@ -176,14 +198,14 @@ export function Hero() {
                   src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfGNvZGluZyUyMHNldHVwfGVufDF8fHx8MTc1NjU1ODgyM3ww&ixlib=rb-4.1.0&q=80&w=400"
                   alt="Coding setup"
                   className="w-full h-48 object-cover rounded-lg mb-4"
-                  animate={{ 
+                  animate={{
                     y: [0, -8, 0],
-                    rotate: [0, 2, 0, -2, 0]
+                    rotate: [0, 2, 0, -2, 0],
                   }}
-                  transition={{ 
-                    duration: 4, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
                   }}
                   whileHover={{ scale: 1.02 }}
                 />
@@ -210,24 +232,27 @@ export function Hero() {
               </motion.div>
             </motion.div>
           </motion.div>
+          </HydrationSafe>
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.button
-            onClick={scrollToNext}
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-muted-foreground hover:text-primary transition-colors"
+        <HydrationSafe>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           >
-            <ArrowDown className="h-6 w-6" />
-          </motion.button>
-        </motion.div>
+            <motion.button
+              onClick={scrollToNext}
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ArrowDown className="h-6 w-6" />
+            </motion.button>
+          </motion.div>
+        </HydrationSafe>
       </div>
     </section>
   );

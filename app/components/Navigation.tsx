@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
+import { HydrationSafe } from "./HydrationSafe";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -62,11 +63,36 @@ export function Navigation() {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+    <HydrationSafe fallback={
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex-shrink-0">
+              <span className="text-xl font-bold text-gray-800">
+                Hasindu Bandara
+              </span>
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    className="px-3 py-2 rounded-md transition-colors font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    }>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
           ? "bg-white/95 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-white/80 backdrop-blur-sm"
       }`}
@@ -199,5 +225,6 @@ export function Navigation() {
         )}
       </div>
     </motion.nav>
+    </HydrationSafe>
   );
 }

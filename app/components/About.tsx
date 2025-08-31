@@ -3,14 +3,7 @@
 import { motion } from "motion/react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import {
-  Calendar,
-  MapPin,
-  GraduationCap,
-  Award,
-  Target,
-  Users,
-} from "lucide-react";
+import { MapPin, GraduationCap, Award, Target, Users } from "lucide-react";
 
 const experience = [
   {
@@ -112,9 +105,10 @@ export function About() {
             About Me
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I'm a passionate software engineer with over 5 years of experience
-            building scalable web applications and leading development teams. I
-            love solving complex problems and creating innovative solutions.
+            I&apos;m a passionate software engineer with over 5 years of
+            experience building scalable web applications and leading
+            development teams. I love solving complex problems and creating
+            innovative solutions.
           </p>
         </motion.div>
 

@@ -106,8 +106,8 @@ export function Contact() {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind or want to discuss opportunities? I'd love to
-            hear from you. Let's build something amazing together.
+            Have a project in mind or want to discuss opportunities? I&apos;d
+            love to hear from you. Let&apos;s build something amazing together.
           </p>
         </motion.div>
 
@@ -121,10 +121,11 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
               <p className="text-gray-600 mb-8">
-                I'm always open to discussing new opportunities, interesting
-                projects, or just having a chat about technology and innovation.
+                I&apos;m always open to discussing new opportunities,
+                interesting projects, or just having a chat about technology and
+                innovation.
               </p>
             </div>
 

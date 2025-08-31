@@ -1,10 +1,20 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Mail, Phone, MapPin, Send, MessageCircle, Calendar, Github, Linkedin, Twitter } from 'lucide-react';
-import { useState } from 'react';
+import { motion } from "motion/react";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  MessageCircle,
+  Calendar,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+import { useState } from "react";
 
 const contactInfo = [
   {
@@ -12,29 +22,29 @@ const contactInfo = [
     title: "Email",
     detail: "alex.johnson@email.com",
     link: "mailto:alex.johnson@email.com",
-    description: "Send me an email anytime"
+    description: "Send me an email anytime",
   },
   {
     icon: <Phone className="w-6 h-6" />,
-    title: "Phone", 
+    title: "Phone",
     detail: "+1 (555) 123-4567",
     link: "tel:+15551234567",
-    description: "Call for urgent matters"
+    description: "Call for urgent matters",
   },
   {
     icon: <MapPin className="w-6 h-6" />,
     title: "Location",
     detail: "San Francisco, CA",
     link: "https://maps.google.com/?q=San+Francisco,CA",
-    description: "Available for local meetings"
+    description: "Available for local meetings",
   },
   {
     icon: <Calendar className="w-6 h-6" />,
     title: "Schedule",
     detail: "Book a Meeting",
     link: "https://calendly.com/alexjohnson",
-    description: "Let's schedule a call"
-  }
+    description: "Let's schedule a call",
+  },
 ];
 
 const socialLinks = [
@@ -42,41 +52,43 @@ const socialLinks = [
     name: "GitHub",
     icon: <Github className="w-5 h-5" />,
     url: "https://github.com",
-    color: "hover:text-gray-900"
+    color: "hover:text-gray-900",
   },
   {
-    name: "LinkedIn", 
+    name: "LinkedIn",
     icon: <Linkedin className="w-5 h-5" />,
     url: "https://linkedin.com",
-    color: "hover:text-blue-600"
+    color: "hover:text-blue-600",
   },
   {
     name: "Twitter",
     icon: <Twitter className="w-5 h-5" />,
     url: "https://twitter.com",
-    color: "hover:text-blue-400"
-  }
+    color: "hover:text-blue-400",
+  },
 ];
 
 export function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   return (
@@ -94,8 +106,8 @@ export function Contact() {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind or want to discuss opportunities? I'd love to hear from you.
-            Let's build something amazing together.
+            Have a project in mind or want to discuss opportunities? I&apos;d
+            love to hear from you. Let&apos;s build something amazing together.
           </p>
         </motion.div>
 
@@ -109,9 +121,11 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
               <p className="text-gray-600 mb-8">
-                I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and innovation.
+                I&apos;m always open to discussing new opportunities,
+                interesting projects, or just having a chat about technology and
+                innovation.
               </p>
             </div>
 
@@ -121,8 +135,14 @@ export function Contact() {
                 <motion.a
                   key={index}
                   href={contact.link}
-                  target={contact.link.startsWith('http') ? '_blank' : undefined}
-                  rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  target={
+                    contact.link.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    contact.link.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -136,9 +156,15 @@ export function Contact() {
                           {contact.icon}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-lg mb-1">{contact.title}</h4>
-                          <p className="text-gray-900 font-medium mb-1">{contact.detail}</p>
-                          <p className="text-sm text-gray-500">{contact.description}</p>
+                          <h4 className="font-semibold text-lg mb-1">
+                            {contact.title}
+                          </h4>
+                          <p className="text-gray-900 font-medium mb-1">
+                            {contact.detail}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            {contact.description}
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -190,7 +216,10 @@ export function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Name *
                       </label>
                       <input
@@ -205,7 +234,10 @@ export function Contact() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
                         Email *
                       </label>
                       <input
@@ -222,7 +254,10 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Subject *
                     </label>
                     <input
@@ -238,7 +273,10 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Message *
                     </label>
                     <textarea
@@ -273,9 +311,12 @@ export function Contact() {
         >
           <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
             <div className="text-4xl mb-4">⚡</div>
-            <h3 className="text-2xl font-bold mb-2">Quick Response Guaranteed</h3>
+            <h3 className="text-2xl font-bold mb-2">
+              Quick Response Guaranteed
+            </h3>
             <p className="text-gray-600">
-              I typically respond to all inquiries within 24 hours. Looking forward to hearing from you!
+              I typically respond to all inquiries within 24 hours. Looking
+              forward to hearing from you!
             </p>
           </div>
         </motion.div>
