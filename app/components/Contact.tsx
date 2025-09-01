@@ -14,7 +14,6 @@ import {
   Linkedin,
 } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
-import { useState } from "react";
 
 const contactInfo = [
   {
@@ -95,7 +94,9 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl text-black font-bold mb-6">Let&apos;s Connect</h3>
+              <h3 className="text-2xl text-black font-bold mb-6">
+                Let&apos;s Connect
+              </h3>
               <p className="text-gray-600 mb-8">
                 I&apos;m always open to discussing new opportunities,
                 interesting projects, or just having a chat about technology and
@@ -154,7 +155,9 @@ export function Contact() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h4 className="font-semibold text-blue-600 text-lg mb-4">Follow Me</h4>
+              <h4 className="font-semibold text-blue-600 text-lg mb-4">
+                Follow Me
+              </h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -293,7 +296,8 @@ export function Contact() {
                       animate={{ opacity: 1, y: 0 }}
                       className="text-center text-green-600 bg-green-50 p-3 rounded-lg"
                     >
-                      ✅ Message sent successfully! I'll get back to you soon.
+                      ✅ Message sent successfully! I&apos;ll get back to you
+                      soon.
                     </motion.div>
                   )}
 

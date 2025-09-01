@@ -3,7 +3,8 @@
 import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { ArrowDown, Download, Github, ExternalLink } from "lucide-react";
-import { HydrationSafe, NoSSR } from "./HydrationSafe";
+import { HydrationSafe } from "./HydrationSafe";
+import Image from "next/image";
 
 export function Hero() {
   const scrollToNext = () => {
@@ -93,7 +94,7 @@ export function Hero() {
                     Passionate Computer Science student at University of
                     Kelaniya, specializing in modern web technologies. Building
                     innovative solutions with React, Next.js, and creative
-                    frontend animations. Call me "Hasi"!
+                    frontend animations. Call me &quot;Hasi&quot;!
                   </p>
                 </div>
               </div>
@@ -180,9 +181,11 @@ export function Hero() {
             fallback={
               <div className="relative w-full max-w-md mx-auto">
                 <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-6">
-                  <img
+                  <Image
                     src="/hasindu-photo.jpg"
                     alt="Hasindu Bandara - Full Stack Developer"
+                    width={400}
+                    height={300}
                     className="w-full h-48 object-cover object-top rounded-lg mb-4"
                   />
                   <div className="space-y-3">

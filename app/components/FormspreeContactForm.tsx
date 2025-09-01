@@ -38,7 +38,7 @@ export function FormspreeContactForm() {
       } else {
         setSubmitStatus("error");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     }
 
@@ -135,7 +135,7 @@ export function FormspreeContactForm() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center text-green-600 bg-green-50 p-3 rounded-lg"
         >
-          ✅ Message sent successfully! I'll get back to you soon.
+          ✅ Message sent successfully! I&apos;ll get back to you soon.
         </motion.div>
       )}
 
