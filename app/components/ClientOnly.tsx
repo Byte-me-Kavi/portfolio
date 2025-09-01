@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export function useIsClient() {
   const [isClient, setIsClient] = useState(false);
@@ -12,8 +12,11 @@ export function useIsClient() {
   return isClient;
 }
 
-export function ClientOnly({ children, fallback = null }: { 
-  children: React.ReactNode; 
+export function ClientOnly({
+  children,
+  fallback = null,
+}: {
+  children: React.ReactNode;
   fallback?: React.ReactNode;
 }) {
   const isClient = useIsClient();

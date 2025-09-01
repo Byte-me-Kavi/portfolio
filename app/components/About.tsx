@@ -7,85 +7,85 @@ import { MapPin, GraduationCap, Award, Target, Users } from "lucide-react";
 
 const experience = [
   {
-    title: "Senior Full Stack Developer",
-    company: "Tech Innovations Inc",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
+    title: "Computer Science Student",
+    company: "University of Kelaniya",
+    location: "Sri Lanka",
+    period: "2023 - 2027 (Expected)",
     description:
-      "Lead development of scalable web applications using React, Node.js, and AWS. Mentored junior developers and architected microservices solutions.",
+      "Pursuing Bachelor of Science (Honors) in Computer Science. Gaining comprehensive knowledge in programming, algorithms, data structures, and software engineering principles.",
     achievements: [
-      "Increased application performance by 40%",
-      "Led team of 5 developers",
-      "Implemented CI/CD pipelines",
+      "Learning modern web technologies",
+      "Building practical projects",
+      "Developing problem-solving skills",
     ],
   },
   {
-    title: "Full Stack Developer",
-    company: "Digital Solutions LLC",
-    location: "New York, NY",
-    period: "2020 - 2022",
+    title: "IT Student",
+    company: "ICBT Kandy Campus",
+    location: "Kandy, Sri Lanka",
+    period: "Completed",
     description:
-      "Developed and maintained multiple client projects using modern web technologies. Collaborated with design and product teams.",
+      "Completed Diploma in IT & English, gaining foundational knowledge in information technology and enhancing English communication skills.",
     achievements: [
-      "Delivered 15+ successful projects",
-      "Reduced bug reports by 50%",
-      "Improved code review process",
+      "Strong foundation in IT concepts",
+      "Enhanced English proficiency",
+      "Technical documentation skills",
     ],
   },
   {
-    title: "Frontend Developer",
-    company: "StartupCo",
-    location: "Austin, TX",
-    period: "2018 - 2020",
+    title: "Academic Excellence",
+    company: "Ranabima Royal College",
+    location: "Sri Lanka",
+    period: "2018 - 2021",
     description:
-      "Built responsive web applications and implemented modern UI/UX designs. Worked in fast-paced startup environment.",
+      "Achieved outstanding results in both Advanced Level and Ordinary Level examinations, demonstrating strong analytical and problem-solving abilities.",
     achievements: [
-      "Built 10+ responsive web apps",
-      "Optimized loading times by 60%",
-      "Collaborated with UX team",
+      "A/L: Combined Math (A), Chemistry (B), Physics (B)",
+      "Z-Score: 1.5936",
+      "O/L: 9 A passes",
     ],
   },
 ];
 
 const education = [
   {
-    degree: "Master of Science in Computer Science",
-    school: "Stanford University",
-    location: "Stanford, CA",
-    period: "2016 - 2018",
-    gpa: "3.9/4.0",
-    specialization: "Software Engineering & AI",
+    degree: "Bachelor of Science (Honors) in Computer Science",
+    school: "University of Kelaniya",
+    location: "Sri Lanka",
+    period: "2023 - 2027 (Expected)",
+    gpa: "In Progress",
+    specialization: "Computer Science & Software Engineering",
   },
   {
-    degree: "Bachelor of Science in Computer Science",
-    school: "University of California, Berkeley",
-    location: "Berkeley, CA",
-    period: "2012 - 2016",
-    gpa: "3.8/4.0",
-    specialization: "Computer Science & Mathematics",
+    degree: "Diploma in IT & English",
+    school: "ICBT Kandy Campus",
+    location: "Kandy, Sri Lanka",
+    period: "Completed",
+    gpa: "Completed",
+    specialization: "Information Technology",
   },
 ];
 
 const highlights = [
   {
     icon: <Award className="w-6 h-6" />,
-    title: "5+ Years Experience",
-    description: "Professional software development",
+    title: "Academic Excellence",
+    description: "A/L Z-Score: 1.5936, 9 A passes at O/L",
   },
   {
     icon: <Users className="w-6 h-6" />,
-    title: "50+ Projects",
-    description: "Successfully delivered applications",
+    title: "Group Projects",
+    description: "Collaborative development experience",
   },
   {
     icon: <Target className="w-6 h-6" />,
-    title: "99% Success Rate",
-    description: "On-time project delivery",
+    title: "Learning Journey",
+    description: "Currently mastering React, Vue & GSAP",
   },
   {
     icon: <GraduationCap className="w-6 h-6" />,
-    title: "Advanced Degree",
-    description: "MS in Computer Science",
+    title: "Computer Science",
+    description: "University of Kelaniya undergraduate",
   },
 ];
 
@@ -132,7 +132,7 @@ export function About() {
               <div className="flex justify-center mb-4 text-blue-600">
                 {highlight.icon}
               </div>
-              <h3 className="font-bold text-lg mb-2">{highlight.title}</h3>
+              <h3 className="font-bold text-black text-lg mb-2">{highlight.title}</h3>
               <p className="text-sm text-gray-600">{highlight.description}</p>
             </motion.div>
           ))}
@@ -149,7 +149,7 @@ export function About() {
           >
             <Card className="card-hover">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
+                <CardTitle className="flex items-center gap-3 text-2xl text-gray-800">
                   <Award className="w-7 h-7 text-blue-600" />
                   Experience
                 </CardTitle>
@@ -167,7 +167,7 @@ export function About() {
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
                         <h3 className="font-bold text-lg">{exp.title}</h3>
-                        <Badge variant="outline" className="text-xs w-fit">
+                        <Badge variant="outline" className="text-xs text-black w-fit">
                           {exp.period}
                         </Badge>
                       </div>
@@ -207,7 +207,7 @@ export function About() {
           >
             <Card className="card-hover">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
+                <CardTitle className="flex items-center gap-3 text-2xl text-gray-800">
                   <GraduationCap className="w-7 h-7 text-blue-600" />
                   Education
                 </CardTitle>
@@ -225,7 +225,7 @@ export function About() {
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
                         <h3 className="font-bold text-lg">{edu.degree}</h3>
-                        <Badge variant="outline" className="text-xs w-fit">
+                        <Badge variant="outline" className="text-xs w-fit text-black">
                           {edu.period}
                         </Badge>
                       </div>

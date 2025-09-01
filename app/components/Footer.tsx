@@ -57,7 +57,7 @@ export function Footer() {
             className="md:col-span-2"
           >
             <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-2">Alex Johnson</h3>
+              <h3 className="text-2xl font-bold mb-2">Hasindu Bandara</h3>
               <p className="text-gray-400 text-lg">Full Stack Developer</p>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
@@ -115,15 +115,15 @@ export function Footer() {
           >
             <h4 className="text-lg font-semibold mb-6">Get In Touch</h4>
             <ul className="space-y-3 text-gray-400">
-              <li>San Francisco, CA</li>
+              <li>Sri Lanka, Colombo</li>
               <li>
-                <a href="mailto:alex.johnson@email.com" className="hover:text-white transition-colors">
-                  alex.johnson@email.com
+                <a href="mailto:hasindubandara759@gmail.com" className="hover:text-white transition-colors">
+                  hasindubandara759@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+15551234567" className="hover:text-white transition-colors">
-                  +1 (555) 123-4567
+                <a href="tel:+94769695867" className="hover:text-white transition-colors">
+                  +94 76 969 5867
                 </a>
               </li>
             </ul>
@@ -140,7 +140,7 @@ export function Footer() {
               viewport={{ once: true }}
               className="flex items-center space-x-2 text-gray-400 mb-4 sm:mb-0"
             >
-              <span>© 2024 Alex Johnson. Made with</span>
+              <span>© {new Date().getFullYear()} Hasindu Bandara. Made with</span>
               <Heart className="w-4 h-4 text-red-500 fill-current" />
               <span>and lots of coffee</span>
             </motion.div>

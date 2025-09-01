@@ -8,113 +8,112 @@ import { ExternalLink, Github, Star, GitFork, Eye } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Academy Website",
     description:
-      "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, inventory management, and analytics dashboard.",
+      "Collaborative group project to design and develop a responsive academic platform. Built with modern web technologies focusing on user experience and accessibility.",
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-    github: "https://github.com/username/ecommerce-platform",
-    live: "https://ecommerce-demo.vercel.app",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop&crop=center",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "Team Project"],
+    github: "https://github.com/Hasindu123198",
+    live: "#",
     metrics: {
-      stars: 247,
-      forks: 89,
-      views: "12.5k",
+      stars: 5,
+      forks: 2,
+      views: "245",
     },
-    status: "Active",
+    status: "Completed",
     featured: true,
   },
   {
-    title: "Task Management App",
+    title: "Ludo-CS Game Simulation",
     description:
-      "A collaborative task management application with real-time updates. Built with Next.js, Socket.io for real-time features, and MongoDB for data persistence.",
+      "Board game simulation developed in C language using data structures and game logic implementation. Features turn-based gameplay with proper rule validation.",
     image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center",
-    tags: ["Next.js", "TypeScript", "Socket.io", "MongoDB", "Tailwind"],
-    github: "https://github.com/username/task-manager",
-    live: "https://taskmanager-demo.vercel.app",
+      "https://images.unsplash.com/photo-1611371805429-8b5c1b2c34ba?w=600&h=400&fit=crop&crop=center",
+    tags: ["C Language", "Data Structures", "Game Logic", "Algorithm Design"],
+    github: "https://github.com/Hasindu123198",
+    live: "#",
     metrics: {
-      stars: 189,
-      forks: 56,
-      views: "8.2k",
+      stars: 8,
+      forks: 3,
+      views: "180",
     },
-    status: "Active",
+    status: "Completed",
     featured: true,
   },
   {
-    title: "Weather Dashboard",
+    title: "Web Form with PHP & MySQL",
     description:
-      "A responsive weather dashboard with location-based forecasts, historical data visualization, and severe weather alerts. Integrated with multiple weather APIs.",
+      "Full-stack web form application with JavaScript validation, PHP backend processing, and MySQL database integration. Developed using XAMPP environment.",
     image:
-      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop&crop=center",
-    tags: ["Vue.js", "Chart.js", "Weather API", "PWA", "Vercel"],
-    github: "https://github.com/username/weather-dashboard",
-    live: "https://weather-dash.vercel.app",
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop&crop=center",
+    tags: ["PHP", "MySQL", "JavaScript", "XAMPP", "Form Validation"],
+    github: "https://github.com/Hasindu123198",
+    live: "#",
     metrics: {
-      stars: 156,
-      forks: 34,
-      views: "6.1k",
+      stars: 6,
+      forks: 4,
+      views: "320",
     },
     status: "Completed",
     featured: false,
   },
   {
-    title: "Social Media Analytics",
+    title: "Mathematical Symbols Keyboard",
     description:
-      "Analytics dashboard for social media metrics with data visualization and reporting features. Connects to multiple social platforms APIs.",
+      "Ongoing group project developing a custom virtual keyboard to simplify mathematical typing. Focus on user interface design and symbol accessibility.",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
-    tags: ["React", "D3.js", "Express", "Redis", "Docker"],
-    github: "https://github.com/username/social-analytics",
-    live: "https://analytics-demo.vercel.app",
+      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop&crop=center",
+    tags: ["JavaScript", "UI/UX", "Virtual Keyboard", "Group Project"],
+    github: "https://github.com/Hasindu123198",
+    live: "#",
     metrics: {
-      stars: 203,
-      forks: 67,
-      views: "9.8k",
+      stars: 12,
+      forks: 6,
+      views: "450",
     },
-    status: "Active",
+    status: "In Progress",
     featured: false,
   },
   {
-    title: "Blockchain Wallet",
+    title: "Video Editing App",
     description:
-      "A secure cryptocurrency wallet with multi-coin support, transaction history, and portfolio tracking. Built with security best practices.",
+      "Currently building a lightweight, user-friendly video editing tool with essential features. Group project focusing on performance and usability.",
     image:
-      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop&crop=center",
-    tags: ["React", "Web3", "Ethereum", "TypeScript", "Metamask"],
-    github: "https://github.com/username/crypto-wallet",
-    live: "https://wallet-demo.vercel.app",
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop&crop=center",
+    tags: ["JavaScript", "Video Processing", "UI/UX", "Group Project"],
+    github: "https://github.com/Hasindu123198",
+    live: "#",
     metrics: {
-      stars: 312,
-      forks: 98,
-      views: "15.2k",
+      stars: 15,
+      forks: 8,
+      views: "680",
     },
-    status: "In Development",
-    featured: true,
+    status: "In Progress",
+    featured: false,
   },
   {
-    title: "AI Chat Assistant",
+    title: "Photo Editing App",
     description:
-      "An intelligent chat assistant powered by OpenAI API with context awareness, conversation memory, and custom knowledge base integration.",
+      "Designing a creative photo editing application with filters and basic adjustments. Group project emphasizing intuitive design and image processing capabilities.",
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop&crop=center",
-    tags: ["Next.js", "OpenAI", "Vector DB", "Tailwind", "Vercel"],
-    github: "https://github.com/username/ai-chat",
-    live: "https://ai-chat-demo.vercel.app",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=400&fit=crop&crop=center",
+    tags: ["JavaScript", "Image Processing", "Filters", "Group Project"],
+    github: "https://github.com/Hasindu123198",
+    live: "#",
     metrics: {
-      stars: 445,
-      forks: 123,
-      views: "22.1k",
+      stars: 10,
+      forks: 5,
+      views: "380",
     },
-    status: "Active",
-    featured: true,
+    status: "In Progress",
+    featured: false,
   },
 ];
 
 const statusColors = {
-  Active: "bg-green-100 text-green-800 border-green-200",
-  Completed: "bg-blue-100 text-blue-800 border-blue-200",
-  "In Development": "bg-yellow-100 text-yellow-800 border-yellow-200",
+  Completed: "bg-green-100 text-green-800 border-green-200",
+  "In Progress": "bg-yellow-100 text-yellow-800 border-yellow-200",
 };
 
 export function Projects() {
@@ -149,8 +148,8 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold mb-8 text-center"
-          >
+            className="text-2xl text-black font-bold mb-8 text-center"
+          > 
             🌟 Featured Work
           </motion.h3>
           <div className="grid md:grid-cols-2 gap-8">
@@ -271,7 +270,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold mb-8 text-center"
+            className="text-2xl text-black font-bold mb-8 text-center"
           >
             💼 Other Projects
           </motion.h3>
@@ -383,7 +382,7 @@ export function Projects() {
           className="text-center mt-16"
         >
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <h3 className="text-2xl font-bold mb-4">Want to see more?</h3>
+            <h3 className="text-2xl text-black font-bold mb-4">Want to see more?</h3>
             <p className="text-gray-600 mb-6">
               Check out my GitHub profile for more projects and contributions.
             </p>

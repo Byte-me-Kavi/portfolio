@@ -1,7 +1,7 @@
 "use client";
 
-import dynamic from 'next/dynamic';
-import { ReactNode } from 'react';
+import dynamic from "next/dynamic";
+import { ReactNode } from "react";
 
 // This component helps prevent hydration mismatches by ensuring
 // certain content only renders on the client side

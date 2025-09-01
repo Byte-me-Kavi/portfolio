@@ -6,47 +6,49 @@ import { Badge } from "./ui/badge";
 
 const skillCategories = [
   {
-    title: "Frontend Development",
+    title: "Programming Languages",
     icon: "💻",
     skills: [
-      { name: "React/Next.js", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "Vue.js", level: 75 },
-      { name: "HTML/CSS", level: 95 },
-      { name: "Tailwind CSS", level: 90 },
+      { name: "JavaScript", level: 85 },
+      { name: "Java", level: 80 },
+      { name: "Python", level: 75 },
+      { name: "C/C++", level: 70 },
+      { name: "PHP", level: 70 },
+      { name: "Kotlin", level: 65 },
     ],
   },
   {
-    title: "Backend Development",
-    icon: "⚙️",
+    title: "Web Development",
+    icon: "🌐",
     skills: [
-      { name: "Node.js", level: 85 },
-      { name: "Python", level: 80 },
-      { name: "Java", level: 70 },
-      { name: "Go", level: 65 },
-      { name: "PHP", level: 60 },
+      { name: "React.js", level: 85 },
+      { name: "Next.js", level: 80 },
+      { name: "Vue.js", level: 75 },
+      { name: "Node.js", level: 75 },
+      { name: "NestJS", level: 70 },
+      { name: "GSAP", level: 70 },
     ],
   },
   {
     title: "Database & Storage",
     icon: "🗄️",
     skills: [
-      { name: "PostgreSQL", level: 85 },
-      { name: "MongoDB", level: 80 },
-      { name: "Redis", level: 75 },
-      { name: "MySQL", level: 85 },
-      { name: "Elasticsearch", level: 70 },
+      { name: "MySQL", level: 80 },
+      { name: "PostgreSQL", level: 75 },
+      { name: "MongoDB", level: 70 },
     ],
   },
   {
-    title: "Cloud & DevOps",
-    icon: "☁️",
+    title: "Tools & Platforms",
+    icon: "🛠️",
     skills: [
-      { name: "AWS", level: 80 },
-      { name: "Docker", level: 85 },
-      { name: "Kubernetes", level: 70 },
-      { name: "NGINX", level: 75 },
-      { name: "Terraform", level: 65 },
+      { name: "Git", level: 85 },
+      { name: "Linux", level: 75 },
+      { name: "VS Code", level: 90 },
+      { name: "Code Blocks", level: 80 },
+      { name: "Figma", level: 70 },
+      { name: "Photoshop", level: 65 },
+      { name: "Illustrator", level: 60 },
     ],
   },
 ];
@@ -94,7 +96,7 @@ export function Skills() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gradient">
@@ -118,7 +120,7 @@ export function Skills() {
                 delay: index * 0.2,
                 ease: "easeOut",
               }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div
                 whileHover={{
@@ -153,10 +155,10 @@ export function Skills() {
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{
-                            delay: 0.5 + skillIndex * 0.1,
+                            delay: 0.3 + skillIndex * 0.1,
                             duration: 0.6,
                           }}
-                          viewport={{ once: true }}
+                          viewport={{ once: true, amount: 0.2 }}
                         >
                           <div className="flex justify-between items-center mb-2">
                             <span className="font-medium">{skill.name}</span>
@@ -164,26 +166,26 @@ export function Skills() {
                               className="text-sm text-gray-600"
                               initial={{ opacity: 0 }}
                               whileInView={{ opacity: 1 }}
-                              transition={{ delay: 1 + skillIndex * 0.1 }}
-                              viewport={{ once: true }}
+                              transition={{ delay: 0.6 + skillIndex * 0.1 }}
+                              viewport={{ once: true, amount: 0.2 }}
                             >
                               {skill.level}%
                             </motion.span>
                           </div>
-                          <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                          <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden relative">
                             <motion.div
-                              className="h-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-600"
-                              initial={{ width: 0, x: -20 }}
+                              className="h-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 absolute top-0 left-0"
+                              style={{ minWidth: "2px" }}
+                              initial={{ width: "0%" }}
                               whileInView={{
                                 width: `${skill.level}%`,
-                                x: 0,
                               }}
                               transition={{
-                                duration: 1.5,
-                                delay: 0.8 + skillIndex * 0.1,
+                                duration: 2,
+                                delay: 0.7 + skillIndex * 0.1,
                                 ease: "easeOut",
                               }}
-                              viewport={{ once: true }}
+                              viewport={{ once: true, amount: 0.2 }}
                               whileHover={{
                                 boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
                                 transition: { duration: 0.3 },
@@ -205,7 +207,7 @@ export function Skills() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="mb-16"
         >
           <motion.div
@@ -251,7 +253,7 @@ export function Skills() {
                         boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
                         transition: { duration: 0.3 },
                       }}
-                      viewport={{ once: true }}
+                      viewport={{ once: true, amount: 0.3 }}
                       className="text-center p-4 bg-white rounded-lg border border-gray-200 hover:border-primary transition-all duration-300 cursor-pointer"
                     >
                       <motion.div
@@ -268,7 +270,7 @@ export function Skills() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: 0.3 + index * 0.05 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                       >
                         {tech.category}
                       </motion.div>
@@ -276,7 +278,7 @@ export function Skills() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.5 + index * 0.05 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                       >
                         <Badge
                           variant={
@@ -302,7 +304,7 @@ export function Skills() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div
               whileHover={{
@@ -345,7 +347,7 @@ export function Skills() {
                           x: 5,
                           transition: { duration: 0.2 },
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         className="p-3 rounded-lg border border-gray-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all duration-300 cursor-pointer"
                       >
                         <motion.div
@@ -370,7 +372,7 @@ export function Skills() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div
               whileHover={{
@@ -413,7 +415,7 @@ export function Skills() {
                           x: 5,
                           transition: { duration: 0.2 },
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         className="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-100 hover:border-green-200 hover:bg-green-50/30 transition-all duration-300 cursor-pointer"
                       >
                         <motion.span

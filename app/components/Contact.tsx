@@ -12,38 +12,38 @@ import {
   Calendar,
   Github,
   Linkedin,
-  Twitter,
 } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 import { useState } from "react";
 
 const contactInfo = [
   {
     icon: <Mail className="w-6 h-6" />,
     title: "Email",
-    detail: "alex.johnson@email.com",
-    link: "mailto:alex.johnson@email.com",
+    detail: "hasindubandara759@gmail.com",
+    link: "mailto:hasindubandara759@gmail.com",
     description: "Send me an email anytime",
   },
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Phone",
-    detail: "+1 (555) 123-4567",
-    link: "tel:+15551234567",
+    detail: "+94 76 969 5867",
+    link: "tel:+94769695867",
     description: "Call for urgent matters",
   },
   {
     icon: <MapPin className="w-6 h-6" />,
     title: "Location",
-    detail: "San Francisco, CA",
-    link: "https://maps.google.com/?q=San+Francisco,CA",
-    description: "Available for local meetings",
+    detail: "Sri Lanka",
+    link: "https://maps.google.com/?q=Sri+Lanka",
+    description: "Available for remote work",
   },
   {
     icon: <Calendar className="w-6 h-6" />,
-    title: "Schedule",
-    detail: "Book a Meeting",
-    link: "https://calendly.com/alexjohnson",
-    description: "Let's schedule a call",
+    title: "University",
+    detail: "University of Kelaniya",
+    link: "#",
+    description: "Computer Science Student",
   },
 ];
 
@@ -51,45 +51,19 @@ const socialLinks = [
   {
     name: "GitHub",
     icon: <Github className="w-5 h-5" />,
-    url: "https://github.com",
+    url: "https://github.com/Hasindu123198",
     color: "hover:text-gray-900",
   },
   {
     name: "LinkedIn",
     icon: <Linkedin className="w-5 h-5" />,
-    url: "https://linkedin.com",
+    url: "https://linkedin.com/in/hasindu-bandara-7a227a308",
     color: "hover:text-blue-600",
-  },
-  {
-    name: "Twitter",
-    icon: <Twitter className="w-5 h-5" />,
-    url: "https://twitter.com",
-    color: "hover:text-blue-400",
   },
 ];
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-  };
+  const [state, handleSubmit] = useForm("xzzavenk");
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -121,7 +95,7 @@ export function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6">Let&apos;s Connect</h3>
+              <h3 className="text-2xl text-black font-bold mb-6">Let&apos;s Connect</h3>
               <p className="text-gray-600 mb-8">
                 I&apos;m always open to discussing new opportunities,
                 interesting projects, or just having a chat about technology and
@@ -180,7 +154,7 @@ export function Contact() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h4 className="font-semibold text-lg mb-4">Follow Me</h4>
+              <h4 className="font-semibold text-blue-600 text-lg mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -226,11 +200,14 @@ export function Contact() {
                         type="text"
                         id="name"
                         name="name"
-                        value={formData.name}
-                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                         placeholder="Your name"
+                      />
+                      <ValidationError
+                        prefix="Name"
+                        field="name"
+                        errors={state.errors}
                       />
                     </div>
                     <div>
@@ -244,11 +221,14 @@ export function Contact() {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                         placeholder="your.email@example.com"
+                      />
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
                       />
                     </div>
                   </div>
@@ -264,11 +244,14 @@ export function Contact() {
                       type="text"
                       id="subject"
                       name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                       placeholder="What's this about?"
+                    />
+                    <ValidationError
+                      prefix="Subject"
+                      field="subject"
+                      errors={state.errors}
                     />
                   </div>
 
@@ -282,19 +265,48 @@ export function Contact() {
                     <textarea
                       id="message"
                       name="message"
-                      value={formData.message}
-                      onChange={handleChange}
                       required
                       rows={5}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
                       placeholder="Tell me about your project or idea..."
                     />
+                    <ValidationError
+                      prefix="Message"
+                      field="message"
+                      errors={state.errors}
+                    />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full"
+                    disabled={state.submitting}
+                  >
                     <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                    {state.submitting ? "Sending..." : "Send Message"}
                   </Button>
+
+                  {state.succeeded && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-center text-green-600 bg-green-50 p-3 rounded-lg"
+                    >
+                      ✅ Message sent successfully! I'll get back to you soon.
+                    </motion.div>
+                  )}
+
+                  {state.errors && Object.keys(state.errors).length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-center text-red-600 bg-red-50 p-3 rounded-lg"
+                    >
+                      ❌ There was an error sending your message. Please try
+                      again or email me directly at hasindubandara759@gmail.com
+                    </motion.div>
+                  )}
                 </form>
               </CardContent>
             </Card>
@@ -311,7 +323,7 @@ export function Contact() {
         >
           <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
             <div className="text-4xl mb-4">⚡</div>
-            <h3 className="text-2xl font-bold mb-2">
+            <h3 className="text-2xl text-black font-bold mb-2">
               Quick Response Guaranteed
             </h3>
             <p className="text-gray-600">

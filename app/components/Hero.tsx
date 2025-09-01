@@ -78,92 +78,131 @@ export function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <HydrationSafe fallback={
-            <div className="space-y-8">
-              <div>
-                <p className="text-primary mb-4 font-medium">Hi, I&apos;m</p>
-                <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-gradient">Hasindu Bandara</h1>
-                <h2 className="text-2xl lg:text-3xl text-muted-foreground mb-6 font-medium">Full-Stack Software Engineer</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                  I craft exceptional digital experiences with modern technologies. Passionate about clean code, innovative solutions, and building products that make a difference.
-                </p>
+          <HydrationSafe
+            fallback={
+              <div className="space-y-8">
+                <div>
+                  <p className="text-primary mb-4 font-medium">Hi, I&apos;m</p>
+                  <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-gradient">
+                    Hasindu Bandara
+                  </h1>
+                  <h2 className="text-2xl lg:text-3xl text-muted-foreground mb-6 font-medium">
+                    Computer Science Student & Full-Stack Developer
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+                    Passionate Computer Science student at University of
+                    Kelaniya, specializing in modern web technologies. Building
+                    innovative solutions with React, Next.js, and creative
+                    frontend animations. Call me "Hasi"!
+                  </p>
+                </div>
               </div>
-            </div>
-          }>
+            }
+          >
             <motion.div
               variants={stagger}
               initial="initial"
               animate="animate"
               className="space-y-8"
             >
-            <motion.div variants={fadeInUp}>
-              <motion.p
-                variants={slideInFromLeft}
-                className="text-primary mb-4 font-medium"
-              >
-                Hi, I&apos;m
-              </motion.p>
-              <motion.h1
-                variants={fadeInUp}
-                className="text-5xl lg:text-7xl font-bold mb-6 text-gradient"
-              >
-                Hasindu Bandara
-              </motion.h1>
-              <motion.h2
-                variants={fadeInUp}
-                className="text-2xl lg:text-3xl text-muted-foreground mb-6 font-medium"
-              >
-                Full-Stack Software Engineer
-              </motion.h2>
-              <motion.p
-                variants={fadeInUp}
-                className="text-lg text-muted-foreground leading-relaxed max-w-lg"
-              >
-                I craft exceptional digital experiences with modern
-                technologies. Passionate about clean code, innovative solutions,
-                and building products that make a difference.
-              </motion.p>
-            </motion.div>
+              <motion.div variants={fadeInUp}>
+                <motion.p
+                  variants={slideInFromLeft}
+                  className="text-primary mb-4 font-medium"
+                >
+                  Hi, I&apos;m
+                </motion.p>
+                <motion.h1
+                  variants={fadeInUp}
+                  className="text-5xl lg:text-7xl font-bold mb-6 text-gradient"
+                >
+                  Hasindu Bandara
+                </motion.h1>
+                <motion.h2
+                  variants={fadeInUp}
+                  className="text-2xl lg:text-3xl text-muted-foreground mb-6 font-medium"
+                >
+                  Full-Stack Software Engineer
+                </motion.h2>
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg text-muted-foreground leading-relaxed max-w-lg"
+                >
+                  I craft exceptional digital experiences with modern
+                  technologies. Passionate about clean code, innovative
+                  solutions, and building products that make a difference.
+                </motion.p>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="flex flex-wrap gap-4"
-            >
-              <Button size="lg" className="group">
-                <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
-                Download CV
-              </Button>
-              <Button variant="outline" size="lg" className="group">
-                <Github className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
-                View GitHub
-              </Button>
-              <Button variant="ghost" size="lg" className="group">
-                <ExternalLink className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                Live Projects
-              </Button>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.8 }}
+                className="flex flex-wrap gap-4"
+              >
+                <Button size="lg" className="group" asChild>
+                  <a
+                    href="/Hasindu_Bandara_CV.pdf"
+                    download="Hasindu_Bandara_CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="mr-2 h-4 w-4 group-hover:animate-bounce" />
+                    Download CV
+                  </a>
+                </Button>
+                <Button variant="outline" size="lg" className="group" asChild>
+                  <a
+                    href="https://github.com/Hasindu123198"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
+                    View GitHub
+                  </a>
+                </Button>
+                <Button variant="ghost" size="lg" className="group" asChild>
+                  <a
+                    href="https://linkedin.com/in/hasindu-bandara-7a227a308"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                    LinkedIn
+                  </a>
+                </Button>
+              </motion.div>
             </motion.div>
-          </motion.div>
           </HydrationSafe>
 
           {/* Visual Element */}
-          <HydrationSafe fallback={
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-6">
-                <img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfGNvZGluZyUyMHNldHVwfGVufDF8fHx8MTc1NjU1ODgyM3ww&ixlib=rb-4.1.0&q=80&w=400"
-                  alt="Coding setup"
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <div className="space-y-3">
-                  <div className="h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{width: "75%"}} />
-                  <div className="h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full" style={{width: "50%"}} />
-                  <div className="h-3 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full" style={{width: "65%"}} />
+          <HydrationSafe
+            fallback={
+              <div className="relative w-full max-w-md mx-auto">
+                <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-6">
+                  <img
+                    src="/hasindu-photo.jpg"
+                    alt="Hasindu Bandara - Full Stack Developer"
+                    className="w-full h-48 object-cover object-top rounded-lg mb-4"
+                  />
+                  <div className="space-y-3">
+                    <div
+                      className="h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
+                      style={{ width: "75%" }}
+                    />
+                    <div
+                      className="h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"
+                      style={{ width: "50%" }}
+                    />
+                    <div
+                      className="h-3 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full"
+                      style={{ width: "65%" }}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          }>
+            }
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{
@@ -174,64 +213,72 @@ export function Hero() {
               transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
               className="relative"
             >
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-                rotate: [0, 1, -1, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="w-full max-w-md mx-auto relative"
-            >
               <motion.div
-                className="bg-white rounded-xl shadow-2xl border border-gray-200 p-6"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, 1, -1, 0],
                 }}
-                transition={{ duration: 0.3 }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="w-full max-w-md mx-auto relative"
               >
-                <motion.img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfGNvZGluZyUyMHNldHVwfGVufDF8fHx8MTc1NjU1ODgyM3ww&ixlib=rb-4.1.0&q=80&w=400"
-                  alt="Coding setup"
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                  animate={{
-                    y: [0, -8, 0],
-                    rotate: [0, 2, 0, -2, 0],
+                <motion.div
+                  className="bg-white rounded-xl shadow-2xl border border-gray-200 p-6"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
                   }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  whileHover={{ scale: 1.02 }}
-                />
-                <div className="space-y-3">
-                  <motion.div
-                    className="h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: "75%" }}
-                    transition={{ delay: 1.5, duration: 1.5, ease: "easeOut" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.img
+                    src="/hasindu-photo.jpg"
+                    alt="Hasindu Bandara - Full Stack Developer"
+                    className="w-full h-85 object-cover object-top rounded-lg mb-4"
+                    animate={{
+                      y: [0, -10, 0],
+                      rotate: [0, 10, 0, -10, 0],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    whileHover={{ scale: 1.02 }}
                   />
-                  <motion.div
-                    className="h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: "50%" }}
-                    transition={{ delay: 2, duration: 1.5, ease: "easeOut" }}
-                  />
-                  <motion.div
-                    className="h-3 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: "65%" }}
-                    transition={{ delay: 2.5, duration: 1.5, ease: "easeOut" }}
-                  />
-                </div>
+                  <div className="space-y-3">
+                    <motion.div
+                      className="h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: "75%" }}
+                      transition={{
+                        delay: 1.5,
+                        duration: 1.5,
+                        ease: "easeOut",
+                      }}
+                    />
+                    <motion.div
+                      className="h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: "50%" }}
+                      transition={{ delay: 2, duration: 1.5, ease: "easeOut" }}
+                    />
+                    <motion.div
+                      className="h-3 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: "65%" }}
+                      transition={{
+                        delay: 2.5,
+                        duration: 1.5,
+                        ease: "easeOut",
+                      }}
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
             </motion.div>
-          </motion.div>
           </HydrationSafe>
         </div>
 
